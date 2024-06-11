@@ -8,6 +8,7 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.input.nestedscroll.nestedScroll
 import cafe.adriel.voyager.navigator.Navigator
 import cafe.adriel.voyager.navigator.bottomSheet.BottomSheetNavigator
 import compose.icons.FeatherIcons
@@ -20,9 +21,11 @@ class UncaughtExceptionLog(
 
   @Composable
   override fun Content(navigator: Navigator, bottomSheetNavigator: BottomSheetNavigator) {
+    val topBarScrollBehavior = TopAppBarDefaults.pinnedScrollBehavior()
 
     Scaffold(
-      topBar = { UncaughtExceptionLogTopBar(navigator::pop) }
+      topBar = { UncaughtExceptionLogTopBar(navigator::pop, topBarScrollBehavior) },
+      modifier = Modifier.nestedScroll(topBarScrollBehavior.nestedScrollConnection)
     ) { paddingValues ->
       Column(
         modifier = Modifier
@@ -39,6 +42,7 @@ class UncaughtExceptionLog(
 @Composable
 private fun UncaughtExceptionLogTopBar(
   navUp: () -> Unit,
+  scrollBehavior: TopAppBarScrollBehavior,
   modifier: Modifier = Modifier
 ) {
   TopAppBar(
@@ -48,6 +52,7 @@ private fun UncaughtExceptionLogTopBar(
       IconButton(onClick = navUp) {
         Icon(imageVector = FeatherIcons.ArrowLeft, contentDescription = null)
       }
-    }
+    },
+    scrollBehavior = scrollBehavior
   )
 }

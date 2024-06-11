@@ -11,6 +11,7 @@ plugins {
   alias(libs.plugins.android.application)
   alias(libs.plugins.buildConfig)
   alias(libs.plugins.kotlinx.serialization)
+  alias(libs.plugins.realm)
 }
 
 kotlin {
@@ -80,6 +81,7 @@ kotlin {
       implementation(libs.multiplatformSettings)
       implementation(libs.multiplatformSettings.coroutines)
       implementation(libs.koin.core)
+      implementation(libs.realm.base)
     }
 
     commonTest.dependencies {
@@ -95,6 +97,7 @@ kotlin {
       implementation(libs.kotlinx.coroutines.android)
       //noinspection UseTomlInstead
       implementation("net.java.dev.jna:jna:5.14.0@aar")
+      implementation(libs.koin.android)
     }
 
     jvmMain.dependencies {

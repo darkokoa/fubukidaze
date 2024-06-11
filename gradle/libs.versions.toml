@@ -6,6 +6,7 @@ composeCompiler = "1.5.13"
 agp = "8.3.1"
 androidx-activityCompose = "1.9.0"
 androidx-uiTest = "1.6.7"
+libraryBase = "1.16.0"
 voyager = "1.0.0"
 kermit = "2.0.3"
 buildConfig = "4.1.1"
@@ -15,12 +16,14 @@ kotlinx-serialization = "1.6.3"
 kotlinx-datetime = "0.6.0"
 multiplatformSettings = "1.1.1"
 koin = "3.5.6"
+realm = "1.16.0"
 
 [libraries]
 
 androidx-activityCompose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activityCompose" }
 androidx-testManifest = { module = "androidx.compose.ui:ui-test-manifest", version.ref = "androidx-uiTest" }
 androidx-junit4 = { module = "androidx.compose.ui:ui-test-junit4", version.ref = "androidx-uiTest" }
+realm-base = { module = "io.realm.kotlin:library-base", version.ref = "libraryBase" }
 voyager-navigator = { module = "cafe.adriel.voyager:voyager-navigator", version.ref = "voyager" }
 voyager-screenModel = { module = "cafe.adriel.voyager:voyager-screenmodel", version.ref = "voyager" }
 voyager-bottomSheetNavigator = { module = "cafe.adriel.voyager:voyager-bottom-sheet-navigator", version.ref = "voyager" }
@@ -38,6 +41,7 @@ kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.
 multiplatformSettings = { module = "com.russhwolf:multiplatform-settings", version.ref = "multiplatformSettings" }
 multiplatformSettings-coroutines = { module = "com.russhwolf:multiplatform-settings-coroutines", version.ref = "multiplatformSettings" }
 koin-core = { module = "io.insert-koin:koin-core", version.ref = "koin" }
+koin-android = { module = "io.insert-koin:koin-android", version.ref = "koin" }
 
 [plugins]
 
@@ -46,3 +50,4 @@ compose = { id = "org.jetbrains.compose", version.ref = "compose" }
 android-application = { id = "com.android.application", version.ref = "agp" }
 buildConfig = { id = "com.github.gmazzo.buildconfig", version.ref = "buildConfig" }
 kotlinx-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+realm = { id = "io.realm.kotlin", version.ref = "realm" }

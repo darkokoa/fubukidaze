@@ -1,6 +1,6 @@
 @file:Suppress("PropertyName")
 
-package dev.darkokoa.fubukidaze.data.pojo
+package dev.darkokoa.fubukidaze.data.model.pojo
 
 import kotlinx.serialization.Serializable
 
